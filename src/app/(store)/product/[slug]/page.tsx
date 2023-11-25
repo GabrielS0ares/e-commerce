@@ -1,11 +1,37 @@
+import { api } from '@/data/api'
+import { Product } from '@/data/types/product'
 import Image from 'next/image'
 
-export default function ProductPage({ params }) {
+interface ProducProps {
+  params: {
+    slug: string
+  }
+}
+
+async function getProducts(slug: string): Promise<Product> {
+  const response = await api(`/api/products/${slug}`, {
+    next: {
+      revalidate: 60 * 60,
+    },
+  })
+
+  const produtc = await response.json()
+
+  return produtc
+}
+
+export default async function ProductPage({ params }: ProducProps) {
+  const produtc = await getProducts(params.slug)
+
+  function installmentValue(term: number, value: number) {
+    return value / term
+  }
+
   return (
     <div className="relative grid max-h-[860px] grid-cols-3">
       <div className="col-span-2 overflow-hidden">
         <Image
-          src="http://github.com/gabrielS0ares.png"
+          src={produtc.image}
           alt=""
           width={1000}
           height={1000}
@@ -13,15 +39,28 @@ export default function ProductPage({ params }) {
         />
       </div>
       <div className="flex flex-col justify-center px-12">
-        <h1 className="text-3xl justify-center leading-tight">Avatar</h1>
+        <h1 className="text-3xl justify-center leading-tight">
+          {produtc.title}
+        </h1>
         <p className="mt-2 leading-relaxed text-zinc-400">
-          A descrição de um produto{' '}
+          {produtc.description}
         </p>
         <div className="mt-8 flex items-center gap-3">
           <span className="inline-block px-5 py-2.5 rounded-full bg-violet-500">
-            321321
+            {produtc.price.toLocaleString('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            })}
           </span>
-          <span className="text-sm text-zinc-400">12x sem juros de 1</span>
+          <span className="text-sm text-zinc-400">
+            12x sem juros de{' '}
+            {installmentValue(12, produtc.price).toLocaleString('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+            })}
+          </span>
         </div>
         <div className="mt-8 space-y-4 ">
           <span className="block font-semibold">Tamanhos</span>
