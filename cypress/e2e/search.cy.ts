@@ -1,7 +1,6 @@
 describe('Buscar produtos', () => {
   it('buscar um produto', () => {
-    cy.visit('/')
-    cy.get('input[name=q]').first().type('moleto').parent('form').submit()
+    cy.searchByQuery('moleto')
     cy.location('pathname').should('include', '/search')
     cy.location('search').should('include', 'q=moleto')
     cy.get('a[href^="/product"]').should('exist')
