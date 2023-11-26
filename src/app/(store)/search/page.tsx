@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import style from 'styled-jsx/style'
 
 export default function Search() {
   return (
