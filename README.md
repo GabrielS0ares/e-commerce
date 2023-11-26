@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1>E-commerce</h1>
 
-## Getting Started
+<p>Nesse projeto reforcei bastante o conceito de server componentes do Next.js, algo que me chamou muita atenção e com certeza será motivo de refatoração de muitos projeto é a sinergia da Fecth API com o Next, atualmente 100% das aplicações que desenvolvi tanto no ambito profissional quanto no pessal foram usando AXIOS.</p>
+<p>Conceitos de Cache e Memoization em React, fixando bem a diferença entre os conceitos onde basicamento o cache atua depois de realiza da requisição, identificando que aquele requição é conhecida pelo sistema e entregando o resoltado que estava salvo. E Memoization atua no server side impedindo que requisições iguais sejam realizadas no carregamento de uma mesma página.</p>
+<p>Testes E2E(end to end) para teste de usabilidade do usuario da view criada, realizando esses testes a partir do Cypress.</p>
 
-First, run the development server:
+<h2>Stacks Usadas</h2>
+<div>
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"  width='50px' />
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg"  width='50px'/>
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"  width='50px'/>      
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" width='50px' />
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yarn/yarn-original.svg" width='50px' />
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<h2>Comandos para rodar o aplicação:</h2>
+<h3>yarn</h3>
+<p>Para instalar as dependências</p>
+<h3>yarn dev</h3>
+<p>Para iniciar o projeto</p>
+<br/>
+<br/>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p>Esse projeto foi criado pela <a href="https://www.rocketseat.com.br/">RocketSeat</a> onde ficou disponível dentre os projetos do curso Ignite</p>
+<br/>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
