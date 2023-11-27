@@ -27,9 +27,11 @@ export function SearchForm() {
   return (
     <form
       onSubmit={handleSearch}
-      className="flex w-[320px] items-center gap-3 rounded-full py-3 px-5 bg-zinc-900 ring-zinc-700"
+      className="flex w-44 items-center gap-3 rounded-full py-3 px-5 bg-zinc-900 ring-zinc-700"
     >
-      <Search className="w-5 h-5 text-zinc-500" />
+      <div>
+        <Search className="w-5 h-5 text-zinc-500" />
+      </div>
       <input
         name="q"
         defaultValue={query ?? ''}
