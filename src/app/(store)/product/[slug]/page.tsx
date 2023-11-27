@@ -52,7 +52,7 @@ export default async function ProductPage({ params }: ProducProps) {
   }
 
   return (
-    <div className="relative grid max-h-[860px] grid-cols-3">
+    <div className="relative grid max-h-[860px] lg:grid-cols-3 space-y-5">
       <div className="col-span-2 overflow-hidden">
         <Image
           src={produtc.image}

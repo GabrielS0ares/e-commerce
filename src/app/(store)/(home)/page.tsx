@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 async function getFeaturesProducts(): Promise<Product[]> {
+  await new Promise((resolve) => setTimeout(resolve, 3000))
   const response = await api('/api/products/featured', {
     next: {
       revalidate: 60 * 60,
